@@ -75,7 +75,7 @@ func (v *TermView) draw() {
 	case mvc.UpdateReady:
 		updateMsg = "ngrok has updated: restart ngrok for the new version"
 	case mvc.UpdateAvailable:
-		updateMsg = "new version available at https://ngrok.com"
+		updateMsg = "new version available at https://dockhive.app"
 	default:
 		pct := float64(updateStatus) / 100.0
 		const barLength = 25

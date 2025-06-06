@@ -1,7 +1,7 @@
 [![Build
 status](https://travis-ci.org/inconshreveable/ngrok.svg)](https://travis-ci.org/inconshreveable/ngrok)
 
-# ngrok - Introspected tunnels to localhost ([homepage](https://ngrok.com))
+# ngrok - Introspected tunnels to localhost ([homepage](https://dockhive.app))
 ### ”I want to expose a local server behind a NAT or firewall to the internet.”
 ![](https://ngrok.com/static/img/overview.png)
 
@@ -33,8 +33,8 @@ ngrok.com ran a pay-what-you-want hosted service of 1.x from early 2013 until Ap
 **DO NOT RUN THIS VERSION OF NGROK (1.X) IN PRODUCTION**. Both the client and server are known to have serious reliability issues including memory and file descriptor leaks as well as crashes. There is also no HA story as the server is a SPOF. You are advised to run 2.0 for any production quality system. 
 
 ## What can I do with ngrok?
-- Expose any http service behind a NAT or firewall to the internet on a subdomain of ngrok.com
-- Expose any tcp service behind a NAT or firewall to the internet on a random port of ngrok.com
+- Expose any http service behind a NAT or firewall to the internet on a subdomain of dockhive.app
+- Expose any tcp service behind a NAT or firewall to the internet on a random port of dockhive.app
 - Inspect all http requests/responses that are transmitted over the tunnel
 - Replay any request that was transmitted over the tunnel
 
@@ -48,3 +48,12 @@ ngrok.com ran a pay-what-you-want hosted service of 1.x from early 2013 until Ap
 
 ## Developing on ngrok
 [ngrok developer's guide](docs/DEVELOPMENT.md)
+
+## Experimental Python server
+
+The repository now includes a very small proof‑of‑concept server
+implementation written in Python at `python-server/simple_ngrokd.py`.
+It exposes HTTP on port `8080` and accepts WebSocket tunnel
+registrations on port `4443`. This script is only intended for testing
+and does **not** implement all features or security checks of the Go
+server.

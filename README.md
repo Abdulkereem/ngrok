@@ -1,7 +1,7 @@
 [![Build
 status](https://travis-ci.org/inconshreveable/ngrok.svg)](https://travis-ci.org/inconshreveable/ngrok)
 
-# ngrok - Introspected tunnels to localhost ([homepage](https://ngrok.com))
+# ngrok - Introspected tunnels to localhost ([homepage](https://dockhive.app))
 ### ”I want to expose a local server behind a NAT or firewall to the internet.”
 ![](https://ngrok.com/static/img/overview.png)
 
@@ -33,8 +33,8 @@ ngrok.com ran a pay-what-you-want hosted service of 1.x from early 2013 until Ap
 **DO NOT RUN THIS VERSION OF NGROK (1.X) IN PRODUCTION**. Both the client and server are known to have serious reliability issues including memory and file descriptor leaks as well as crashes. There is also no HA story as the server is a SPOF. You are advised to run 2.0 for any production quality system. 
 
 ## What can I do with ngrok?
-- Expose any http service behind a NAT or firewall to the internet on a subdomain of ngrok.com
-- Expose any tcp service behind a NAT or firewall to the internet on a random port of ngrok.com
+- Expose any http service behind a NAT or firewall to the internet on a subdomain of dockhive.app
+- Expose any tcp service behind a NAT or firewall to the internet on a random port of dockhive.app
 - Inspect all http requests/responses that are transmitted over the tunnel
 - Replay any request that was transmitted over the tunnel
 

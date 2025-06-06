@@ -48,3 +48,12 @@ ngrok.com ran a pay-what-you-want hosted service of 1.x from early 2013 until Ap
 
 ## Developing on ngrok
 [ngrok developer's guide](docs/DEVELOPMENT.md)
+
+## Experimental Python server
+
+The repository now includes a very small proof‑of‑concept server
+implementation written in Python at `python-server/simple_ngrokd.py`.
+It exposes HTTP on port `8080` and accepts WebSocket tunnel
+registrations on port `4443`. This script is only intended for testing
+and does **not** implement all features or security checks of the Go
+server.

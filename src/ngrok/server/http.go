@@ -1,6 +1,7 @@
 package server
 
 import (
+	"crypto/subtle"
 	"crypto/tls"
 	"fmt"
 	vhost "github.com/inconshreveable/go-vhost"
@@ -98,10 +99,13 @@ func httpHandler(c conn.Conn, proto string) {
 	// If the client specified http auth and it doesn't match this request's auth
 	// then fail the request with 401 Not Authorized and request the client reissue the
 	// request with basic authdeny the request
-	if tunnel.req.HttpAuth != "" && auth != tunnel.req.HttpAuth {
-		c.Info("Authentication failed: %s", auth)
-		c.Write([]byte(NotAuthorized))
-		return
+	if tunnel.req.HttpAuth != "" {
+		expected := tunnel.req.HttpAuth
+		if subtle.ConstantTimeCompare([]byte(auth), []byte(expected)) != 1 {
+			c.Info("Authentication failed")
+			c.Write([]byte(NotAuthorized))
+			return
+		}
 	}
 
 	// dead connections will now be handled by tunnel heartbeating and the client

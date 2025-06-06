@@ -49,7 +49,7 @@ options.
 
 Substitute the address of your ngrokd server for "example.com:4443". The "trust_host_root_certs" parameter instructs
 ngrok to trust the root certificates on your computer when establishing TLS connections to the server. By default, ngrok
-only trusts the root certificate for ngrok.com.
+only trusts the root certificate for dockhive.app.
 
 ## 6. Connect with a client
 Then, just run ngrok as usual to connect securely to your own ngrokd server!
